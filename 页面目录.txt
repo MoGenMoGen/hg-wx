@@ -1,0 +1,89 @@
+
+首页：pages/index/index/main
+注册：pages/index/register/main
+注册成功：pages/index/registerSuccess/main
+富文本：pages/index/richText/main
+新闻详情：pages/index/newDetail/main
+
+社区活动
+列表：pages/active/list/main
+详情：pages/active/detail/main
+发起活动： pages/active/initiate/main
+
+居民议事
+列表：pages/discussion/list/main
+居民议事详情： pages/discussion/detail/main
+发起议事： pages/discussion/initiate/main
+
+垃圾分类：pages/refuseClassification/main
+
+求助服务
+列表：pages/helpServices/list/main
+列表：pages/helpServices/historyList/main
+列表：pages/helpServices/detail/main
+表单：pages/helpServices/formSubmit/main
+表单提交成功：pages/helpServices/submitSuccess/main
+
+好事表扬
+列表：pages/goodDeed/list/main
+表单：pages/goodDeed/formSubmit/main
+
+能人展示：pages/capablePerson/main
+
+积分商城
+首页：pages/shopping/index/main
+商品详情：pages/shopping/proDetail/main
+积分明细：pages/shopping/integral/main
+积分规则：pages/shopping/integralRule/main
+兑换记录：pages/shopping/exchange/main
+
+报事报修
+列表：pages/reportRepair/list/main
+详情：pages/reportRepair/detail/main
+表单：pages/reportRepair/formSubmit/main
+表单提交成功：pages/reportRepair/submitSuccess/main
+
+信息采集
+人脸采集：pages/informationCollect/face/main
+车牌采集：pages/informationCollect/car/main
+
+访客预约（暂不开发）
+列表：pgaes/visitor/list/main
+详情：pgaes/visitor/detail/main
+表单：pages/visitor/formSubmit/main
+
+投诉建议：
+列表：pgaes/suggest/list/main
+详情：pgaes/suggest/detail/main
+表单：pages/suggest/formSubmit/main
+表单提交成功：pages/suggest/submitSuccess/main
+
+党建：
+党建资讯列表：pages/party/newsList/main
+党建资讯详情：pages/party/newsDetail/main(如果详情样式统一则没有这个页面)
+党建活动列表：pages/party/activeList/main
+党建活动详情：pages/party/activeDetail/main
+
+社区直通车
+首页：pages/community/index/main
+社区成员：pages/community/member/main
+党员先锋：pages/community/partyMember/main
+
+社会组织
+首页：pages/socialOrganization/main
+团队活动详情：(同社区活动详情)
+团队风采详情：(同新闻详情)
+
+
+个人中心 ：pages/personal/index/main
+个人信息：pages/personal/info/main
+我的活动：pages/personal/active/main
+我的活动详情: pages/personal/detail/main
+能人申请：pages/personal/capableApply/main
+
+物业评分
+首页: pages/propertyScore/index/main
+详情: pages/propertyScore/detail/main
+
+红黑榜: pages/redAndBlack/main
+h5承载页: pages/index/webView/main

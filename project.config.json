@@ -1,0 +1,116 @@
+{
+  "description": "项目配置文件。",
+  "setting": {
+    "urlCheck": false,
+    "es6": true,
+    "enhance": false,
+    "postcss": true,
+    "preloadBackgroundData": false,
+    "minified": true,
+    "newFeature": true,
+    "coverView": true,
+    "nodeModules": true,
+    "autoAudits": false,
+    "showShadowRootInWxmlPanel": true,
+    "scopeDataCheck": false,
+    "uglifyFileName": false,
+    "checkInvalidKey": true,
+    "checkSiteMap": true,
+    "uploadWithSourceMap": true,
+    "compileHotReLoad": false,
+    "lazyloadPlaceholderEnable": false,
+    "useMultiFrameRuntime": true,
+    "useApiHook": true,
+    "useApiHostProcess": true,
+    "babelSetting": {
+      "ignore": [],
+      "disablePlugins": [],
+      "outputPath": ""
+    },
+    "enableEngineNative": false,
+    "useIsolateContext": true,
+    "userConfirmedBundleSwitch": false,
+    "packNpmManually": false,
+    "packNpmRelationList": [],
+    "minifyWXSS": true,
+    "showES6CompileOption": false
+  },
+  "miniprogramRoot": "dist/wx/",
+  "compileType": "miniprogram",
+  "appid": "wxd503101fcb19cc81",
+  "projectname": "%E9%82%BB%E9%87%8C%E4%B8%AD%E5%BF%83",
+  "simulatorType": "wechat",
+  "simulatorPluginLibVersion": {
+    "qywx_simulator_plugin": "2.4.0"
+  },
+  "condition": {
+    "search": {
+      "list": []
+    },
+    "conversation": {
+      "list": []
+    },
+    "plugin": {
+      "list": []
+    },
+    "game": {
+      "currentL": -1,
+      "list": []
+    },
+    "gamePlugin": {
+      "list": []
+    },
+    "miniprogram": {
+      "list": [
+        {
+          "id": -1,
+          "name": "pages/product/detail/main",
+          "pathName": "pages/product/detail/main",
+          "query": "id= 4763992372564992",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "pages/product/search/main",
+          "pathName": "pages/product/search/main",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "pages/order/list/main",
+          "pathName": "pages/order/list/main",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "pages/product/detail/main",
+          "pathName": "pages/product/detail/main",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "pages/my/myIntegral/main",
+          "pathName": "pages/my/myIntegral/main",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "pages/address/list/main",
+          "pathName": "pages/address/list/main",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "pages/message/list/main",
+          "pathName": "pages/message/list/main",
+          "scene": null
+        }
+      ]
+    }
+  }
+}

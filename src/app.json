@@ -1,0 +1,116 @@
+{
+  "pages": [
+    "pages/index/index/main",
+    "pages/reportRepair/formSubmit/main",
+    "pages/reportRepair/submitSuccess/main",
+    "pages/reportRepair/list/main",
+    "pages/reportRepair/detail/main",
+    "pages/suggest/formSubmit/main",
+    "pages/suggest/submitSuccess/main",
+    "pages/suggest/list/main",
+    "pages/suggest/detail/main",
+    "pages/party/newsList/main",
+    "pages/personal/index/main",
+    "pages/personal/personInfo/main",
+    "pages/active/list/main",
+    "pages/active/detail/main",
+    "pages/discussion/list/main",
+    "pages/discussion/detail/main",
+    "pages/index/richText/main",
+    "pages/shopping/integralRule/main",
+    "pages/shopping/exchange/main",
+    "pages/shopping/index/main",
+    "pages/shopping/proDetail/main",
+    "pages/index/newDetail/main",
+    "pages/party/activeList/main",
+    "pages/party/activeDetail/main",
+    "pages/socialOrganization/main",
+    "pages/informationCollect/face/main",
+    "pages/informationCollect/cohabitAdd/main",
+    "pages/informationCollect/cohabitDetail/main",
+    "pages/informationCollect/cohabitFace/main",
+    "pages/informationCollect/cohabitList/main",
+    "pages/goodDeed/list/main",
+    "pages/goodDeed/formSubmit/main",
+    "pages/helpServices/formSubmit/main",
+    "pages/helpServices/submitSuccess/main",
+    "pages/helpServices/list/main",
+    "pages/helpServices/detail/main",
+    "pages/helpServices/historyList/main",
+    "pages/communityNotification/index/main",
+    "pages/openDoor/main",
+    "pages/shopping/integral/main",
+    "pages/communityNotification/detail/main",
+    "pages/capablePerson/main",
+    "pages/community/index/main",
+    "pages/community/member/main",
+    "pages/community/partyMember/main",
+    "pages/community/detail/main",
+    "pages/register/index/main",
+    "pages/register/label/main",
+    "pages/register/success/main",
+    "pages/discussion/initiate/main",
+    "pages/active/initiate/main",
+    "pages/refuseClassification/main",
+    "pages/personal/active/main",
+    "pages/personal/detail/main",
+    "pages/personal/capableApply/main",
+    "pages/goodDeed/detail/main",
+    "pages/personal/activeTeam/main",
+    "pages/propertyScore/index/main",
+    "pages/propertyScore/detail/main",
+    "pages/redAndBlack/main",
+    "pages/informationCollect/car/main",
+    "pages/index/webView/main"
+  ],
+  "permission": {
+    "scope.userLocation": {
+      "desc": "你的位置信息将用于小程序位置接口的效果展示"
+    }
+  },
+  "usingComponents": {},
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle": "black",
+    "backgroundColor": "#f5f5f5"
+  },
+  "tabBar": {
+    "borderStyle": "white",
+    "color": "#909090",
+    "selectedColor": "#EB020E",
+    "list": [
+      {
+        "text": "邻里中心",
+        "pagePath": "pages/index/index/main",
+        "iconPath": "/static/images/home-unselected.png",
+        "selectedIconPath": "/static/images/home-selected.png"
+      },
+      {
+        "text": "报事报修",
+        "pagePath": "pages/reportRepair/formSubmit/main",
+        "iconPath": "/static/images/repair-unselected.png",
+        "selectedIconPath": "/static/images/repair-selected.png"
+      },
+      {
+        "text": "个人中心",
+        "pagePath": "pages/personal/index/main",
+        "iconPath": "/static/images/mine-unselected.png",
+        "selectedIconPath": "/static/images/mine-selected.png"
+      },
+      {
+        "text": "社区通知",
+        "pagePath": "pages/communityNotification/index/main",
+        "iconPath": "/static/images/communityNotice-unselected.png",
+        "selectedIconPath": "/static/images/communityNotice-selected.png"
+      },
+      {
+        "text": "远程开门",
+        "pagePath": "pages/openDoor/main",
+        "iconPath": "/static/images/openDoor-unselected.png",
+        "selectedIconPath": "/static/images/openDoor-selected.png"
+      }
+    ]
+  }
+}

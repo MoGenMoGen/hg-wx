@@ -1,0 +1,5 @@
+{
+  "navigationBarTitleText":"红黑榜",
+  "onReachBottomDistance": 150,
+  "enablePullDownRefresh": false
+}

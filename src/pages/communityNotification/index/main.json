@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText":"社区通知",
+  "onReachBottomDistance": 150,
+  "enablePullDownRefresh": true,
+  "navigationBarBackgroundColor": "#EB020E",
+  "navigationBarTextStyle": "white"
+}

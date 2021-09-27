@@ -1,0 +1,5 @@
+{
+  "navigationBarTitleText":"能人展示",
+  "onReachBottomDistance": 150,
+  "enablePullDownRefresh": true
+}
