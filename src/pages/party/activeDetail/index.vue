@@ -1,28 +1,15 @@
 <template>
   <div class="home">
-    <!-- 顶部信息 -->
-    <div class="active-title">{{title}}</div>
-    <div class="active-info">
-      <span class="active-time">{{time}}</span>
-      <div class="active-count">
-        <img src="/static/images/viewCount.png" style="width: 34rpx;height: 34rpx;margin-right: 10rpx;">
-        <span>{{count}}</span>
-      </div>
+    <div class="info-box">
+      <span class="info-title">{{info.name}}</span>
+      <span class="info-num"><span style="color: #EC2C17;">{{info.signTotal}}</span>人参加</span>
+      <span class="info-cont" v-html="info.cont"></span>
+      <!-- <img src="/static/images/avatar.png" mode="aspectFill"> -->
+      <span class="info-item">活动时间：{{info.startTime}}</span>
+      <span class="info-item">活动地点：{{info.address}}</span>
+      <span class="info-item" style="margin-bottom: 0;">活动状态： {{info.state}}</span>
     </div>
-    <!-- 头图 -->
-	<block v-for="(item, index) in img" :key="index">
-		<img :src="item" class="headImg" mode="widthFix">
-	</block>
-    <!-- 时间 -->
-    <div class="timeLine" v-if="startTime&&endTime">活动时间：{{startTime}} 至 {{endTime}}</div>
-    <!-- 富文本内容 -->
-    <div v-html="msg"></div>
-    <!-- 签到按钮 -->
-    <!-- <div class="signIn" @click="signIn()" v-if="signInStatus==0&&status==2">签到</div> -->
-    <!-- 未开始与已结束按钮 -->
-    <!-- <div class="signIn" style="background: #999;" v-if="status!=2">{{status==1?'未开始':status==3?'已结束':''}}</div> -->
-    <!-- 已签到 -->
-    <!-- <div class="signIn" style="background: #999;" v-if="signInStatus==1&&status==2">已签到</div> -->
+    <div class="signIn" @click="signIn" v-if="info.state=='进行中'&&info.hasSign==0&&canSign">打卡签到</div>
   </div>
 </template>
 
@@ -30,16 +17,8 @@
   export default {
     data() {
       return {
-        title: "",
-        time: "",
-        count: 0,
-        msg : "",
-        status: 1,
-        signInStatus: 0,
-        id: 0,
-        startTime: "",
-        endTime: "",
-        img: ""
+        info: {},
+        canSign: false
       }
     },
     components: {
@@ -48,25 +27,21 @@
     async onLoad(options) {
       Object.assign(this.$data, this.$options.data())
       this.id = options.id
+      this.api.getPerM({id:options.id}).then(res => {
+        if(res.success){
+          this.canSign = true
+        } else {
+          this.canSign = false
+        }
+      })
+      this.api.partyActiveDetail({id:options.id}).then(res => {
+        res.data.cont = this.until.imgStyle(res.data.cont)
+        res.data.startTime = res.data.startTime.substring(0,10)
+        this.info = res.data
+      })
     },
     onShow() {
-      let data = {
-        id: this.id
-      }
-      //这个函数是确保在调接口前有token，如果当前页面的接口不需要token，可以不用
-      this.api.verifyToken().then(()=>{
-        this.api.partyActiveDetail(data).then((res) => {
-          this.title = res.data.title
-          this.time = res.data.createTime.substring(0,16)
-          // this.msg = res.data.content
-          this.msg = this.until.imgStyle(res.data.content)
-          this.signInStatus = res.data.signInStatus
-          this.status = res.data.status
-          this.startTime = res.data.startTime.substring(0,16)
-          this.endTime = res.data.endTime.substring(0,16)
-          this.img = res.data.img.split(",")
-        })
-      });
+
     },
     //解底事件
     onReachBottom() {
@@ -80,7 +55,6 @@
     },
 
     methods: {
-
       toPage(url) {
         this.until.aHref(url)
       },
@@ -88,20 +62,20 @@
         let self = this
         wx.getLocation({
           type: 'gcj02',
-          success (res) {
+          success(res) {
             let data = {
-              pid: self.id,
+              activityId: self.id,
               lat: res.latitude,
               lng: res.longitude
             }
-            self.api.partyActiveSignIn(data).then((res) => {
-              if(res.success) {
+            self.api.partyActiveSign(data).then((res) => {
+              if (res.success) {
                 wx.showToast({
                   icon: "success",
                   title: res.msg,
                   duration: 2000
                 })
-                self.signInStatus = 1
+                self.info.hasSign = 1
               } else {
                 wx.showToast({
                   icon: "none",
@@ -123,67 +97,59 @@
   .home {
     min-height: 100vh;
     width: 100vw;
-    padding: 34rpx 30rpx 170rpx;
+    padding: 20rpx;
     box-sizing: border-box;
-    background-color: #fff;
-    border-top: 1rpx solid rgba(0, 0, 0, 0.1);
-
-    .active-title {
-      font-size: 44rpx;
-      line-height: 44rpx;
-      color: #000;
-      margin-bottom: 4rpx;
-    }
-
-    .active-info {
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      margin-bottom: 32rpx;
-      .active-time {
-        font-size: 24rpx;
-        line-height: 24rpx;
-        color: #000;
-        margin-right: 26rpx;
-      }
-
-      .active-count {
-        font-size: 24rpx;
-        font-weight: 400;
-        line-height: 34rpx;
-        color: #999;
-        display: flex;
-        align-items: center;
-      }
-    }
-
-    .headImg {
-      width: 690rpx;
-      height: 320rpx;
+    .info-box {
+      width: 710rpx;
+      padding: 40rpx;
+      box-sizing: border-box;
       border-radius: 10rpx;
-      margin: 20rpx auto;
+      background-color: #fff;
+      display: flex;
+      flex-direction: column;
+      .info-title {
+        width: 70%;
+        margin: 0 auto;
+        font-size: 30rpx;
+        color: #303030;
+        font-weight: 500;
+        text-align: center;
+      }
+      .info-num {
+        width: 70%;
+        margin: 20rpx auto;
+        font-size: 24rpx;
+        color: #909090;
+        font-weight: 500;
+        text-align: center;
+      }
+      .info-cont {
+        width: 100%;
+        font-size: 24rpx;
+        color: #303030;
+        margin: 30rpx auto;
+      }
+      img {
+        width: 630rpx;
+        margin: 20rpx auto;
+      }
+      .info-item {
+        font-size: 24rpx;
+        color: #303030;
+        margin-bottom: 30rpx;
+      }
     }
-
-    .timeLine {
-      font-size: 24rpx;
-      font-weight: 500;
-      line-height: 34rpx;
-      color: #333;
-      margin-bottom: 20rpx;
-    }
-
     .signIn {
       position: fixed;
-      bottom: 62rpx;
-      left: 46rpx;
-      width: 660rpx;
-      height: 88rpx;
-      background: #EB020E;
-      box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.16);
-      border-radius: 10rpx;
+      bottom: 100rpx;
+      left: 193rpx;
+      width: 365rpx;
+      height: 80rpx;
+      background: #EC2C17;
+      border-radius: 40rpx;
       text-align: center;
-      line-height: 88rpx;
-      font-size: 28rpx;
+      line-height: 80rpx;
+      font-size: 30rpx;
       color: #fff;
       font-weight: 500;
     }

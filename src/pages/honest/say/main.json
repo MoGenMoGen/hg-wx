@@ -1,0 +1,5 @@
+{
+  "navigationBarTitleText":"村民说事",
+  "onReachBottomDistance": 150,
+  "enablePullDownRefresh": false
+}

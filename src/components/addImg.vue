@@ -1,8 +1,7 @@
 <template>
   <div class="img">
-    <p @click="toAddImg">
-      <image :src="picture" mode="widthFix" />
-      添加图片
+    <p @click="toAddImg" class="upload">
+      <span>+</span>
     </p>
     <p v-for="(item, index) in imgList" :key="index">
       <image :src="close" class="del" mode="widthFix" @click="toDel(index)" />
@@ -12,12 +11,10 @@
 </template>
 
 <script>
-import picture from "../../static/images/picture.png";
 import close from "../../static/images/close.png";
 export default {
   data() {
     return {
-      picture,
       close,
       imgList: [],
     };
@@ -69,8 +66,8 @@ export default {
   flex-wrap: wrap;
   margin-top: 20rpx;
   p {
-    width: 100rpx;
-    height: 100rpx;
+    width: 160rpx;
+    height: 152rpx;
     border-radius: 12rpx;
     margin-right: 10rpx;
     box-sizing: border-box;
@@ -89,6 +86,13 @@ export default {
       z-index: 10;
     }
   }
+  .upload{
+    height: 152rpx;
+    image {
+      width: 100%;
+      height: 100%;
+    }
+  }
   p:first-of-type {
     border: 1px dashed #999999;
     display: flex;
@@ -98,9 +102,10 @@ export default {
     color: #333333;
     font-size: 15rpx;
     line-height: 30rpx;
-    image {
-      width: 49rpx;
-      border-radius: 0;
+    span {
+      color: #999999;
+      font-size: 60rpx;
+      margin-bottom: 20rpx;
     }
   }
 }

@@ -1,0 +1,5 @@
+{
+  "navigationBarTitleText":"景点详情",
+  "onReachBottomDistance": 150,
+  "enablePullDownRefresh": false
+}

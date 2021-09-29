@@ -10,6 +10,9 @@ class until {
       // return match.replace(/style\s*?=\s*?([‘"])[\s\S]*?\1/ig, 'style="max-width:100%;height:auto;"') // 替换style
 
     })
+    myContent = cont.replace(/&nbsp;/g, function (match, capture) {
+      return match.replace(/&nbsp;/g, "\xa0") //替换空格
+    })
     console.log('======')
     console.log(myContent)
     console.log('=======')

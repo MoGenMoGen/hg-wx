@@ -23,8 +23,11 @@
     "build": "node build/build.js wx"
   },
   "dependencies": {
+    "@gaomd/mpvue-animated-number": "^0.1.3",
     "mpvue": "^2.0.0",
+    "mpvue-echarts": "^0.3.2",
     "mpvue-wxparse": "^0.6.5",
+    "qs": "^6.10.1",
     "vuex": "^3.0.1"
   },
   "devDependencies": {

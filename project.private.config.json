@@ -13,101 +13,26 @@
     "miniprogram": {
       "list": [
         {
-          "name": "同住人员列表",
-          "pathName": "pages/informationCollect/cohabitList/main",
-          "query": "id= 4763992372564992",
-          "scene": null
-        },
-        {
-          "name": "同住人员详情",
-          "pathName": "pages/informationCollect/cohabitDetail/main",
-          "query": "id=1390207108927250434",
-          "scene": null
-        },
-        {
-          "name": "好人详情",
-          "pathName": "pages/goodDeed/detail/main",
-          "query": "id=1388056194461896705",
-          "scene": null
-        },
-        {
-          "name": "pages/informationCollect/cohabitFace/main",
-          "pathName": "pages/product/detail/main",
-          "query": "",
-          "scene": null
-        },
-        {
-          "id": -1,
-          "name": "pages/my/myIntegral/main",
-          "pathName": "pages/my/myIntegral/main",
-          "query": "",
-          "scene": null
-        },
-        {
-          "id": -1,
-          "name": "pages/address/list/main",
-          "pathName": "pages/address/list/main",
-          "query": "",
-          "scene": null
-        },
-        {
-          "id": -1,
-          "name": "pages/message/list/main",
-          "pathName": "pages/message/list/main",
-          "query": "",
-          "scene": null
-        },
-        {
-          "name": "pages/shopping/integralRule/main",
-          "pathName": "pages/shopping/integralRule/main",
-          "query": "",
-          "scene": null
-        },
-        {
-          "name": "pages/shopping/exchange/main",
-          "pathName": "pages/shopping/exchange/main",
-          "query": "",
-          "scene": null
-        },
-        {
-          "name": "pages/shopping/index/main",
-          "pathName": "pages/shopping/index/main",
-          "query": "",
-          "scene": null
-        },
-        {
-          "name": "注册第一页",
-          "pathName": "pages/register/index/main",
-          "query": "id= 4763992372564992",
-          "scene": null
-        },
-        {
-          "name": "注册第二页",
-          "pathName": "pages/register/label/main",
-          "query": "id= 4763992372564992",
-          "scene": null
-        },
-        {
-          "name": "pages/personal/active/main",
-          "pathName": "pages/personal/active/main",
-          "query": "",
-          "scene": null
-        },
-        {
-          "name": "pages/informationCollect/cohabitDetail/main",
-          "pathName": "pages/informationCollect/cohabitDetail/main",
-          "query": "id=1409759843607441409",
-          "scene": null
-        },
-        {
-          "name": "pages/informationCollect/car/main",
-          "pathName": "pages/informationCollect/car/main",
-          "query": "",
-          "scene": null
-        },
-        {
           "name": "pages/register/index/main",
           "pathName": "pages/register/index/main",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/register/login/main",
+          "pathName": "pages/register/login/main",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/index/scan/main",
+          "pathName": "pages/index/scan/main",
+          "query": "scene=1427429808739909634",
+          "scene": 1047
+        },
+        {
+          "name": "pages/personal/studyList/main",
+          "pathName": "pages/personal/studyList/main",
           "query": "",
           "scene": null
         }

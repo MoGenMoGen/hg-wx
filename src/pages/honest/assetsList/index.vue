@@ -1,0 +1,197 @@
+<template>
+  <div class="home">
+    <div class="sunShine-item">
+      <div class="sunShine-inner-box" style="padding: 20rpx 10rpx;flex-direction: column;">
+        <div class="sunShine-line-title" style="height: 70rpx;line-height: 70rpx;">
+          <div style="width: 80rpx;">序号</div>
+          <div style="width: 240rpx;">承租方</div>
+          <div style="width: 160rpx;">租期</div>
+          <div style="width: 130rpx;">租金</div>
+          <div style="width: 80rpx;">预警</div>
+        </div>
+        <div :class="{odd:index%2==1,even:index%2==0}" class="sunShine-line-item" v-for="(item,index) in list"
+          :key="index" @click="toPage('/pages/honest/assetsDetail/main?id='+item.id)">
+          <div style="width: 80rpx;">{{index+1}}</div>
+          <div style="width: 240rpx;">{{item.tenantry}}</div>
+          <div style="width: 160rpx;">{{item.leaseStart}}-{{item.leaseEnd}}</div>
+          <div style="width: 130rpx;">{{item.rent}}</div>
+          <div style="width: 80rpx;">
+            <img src="/static/images/greenLight.png"  v-if="item.status==0"/>
+            <img src="/static/images/yellowLight.png" v-if="item.status==1" />
+            <img src="/static/images/redLight.png" v-if="item.status==2" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>
+
+<script>
+  export default {
+    data() {
+      return {
+        list: [], //资产管理列表,
+        current: 1,
+        total: 0
+      }
+    },
+    components: {
+
+    },
+    async onLoad(options) {
+      Object.assign(this.$data, this.$options.data())
+      let data = {
+        current: 1,
+        size: 20
+      }
+      this.getList(data)
+    },
+    onShow() {
+
+    },
+    //解底事件
+    onReachBottom() {
+      if (this.total > this.list.length) {
+        let data = {
+          current: this.current + 1,
+          size: 20
+        }
+        this.getList(data)
+        this.current += 1
+      }
+    },
+
+    //下拉刷新
+    onPullDownRefresh() {
+      // wx.showNavigationBarLoading(); //在标题栏中显示加载图标
+      let data = {
+        current: 1,
+        size: 20
+      }
+      this.current = 1
+      this.list = []
+      this.getList(data);
+      wx.stopPullDownRefresh();
+    },
+
+    onShareAppMessage() {
+      return {
+
+      }
+    },
+
+    methods: {
+      toPage(url) {
+        this.until.aHref(url)
+      },
+      getList(data) {
+        this.api.getAssetsList(data).then(res => {
+          res.records.forEach(item => {
+            item.leaseStart = item.leaseStart.substring(0,10)
+            item.leaseEnd = item.leaseEnd.substring(0,10)
+          })
+          this.list = res.records
+          this.total = res.total
+        })
+      }
+    }
+  }
+</script>
+
+<style scoped lang="less">
+  @import url("../../../css/common.less");
+
+  .home {
+    min-height: 100vh;
+    width: 100vw;
+    padding: 20rpx;
+    box-sizing: border-box;
+      .sunShine-item {
+        width: 710rpx;
+        margin: 20rpx auto;
+        display: flex;
+        flex-direction: column;
+        border-radius: 10rpx;
+        background-color: #fff;
+        .sunShine-inner-box {
+          width: 100%;
+          border-radius: 20rpx;
+          background-color: #fff;
+          display: flex;
+          align-items: center;
+          padding: 40rpx;
+          box-sizing: border-box;
+          font-size: 28rpx;
+          color: #000000;
+
+          .sunShine-line-title {
+            width: 690rpx;
+            background-color: #265EFF;
+            font-size: 24rpx;
+            color: #fff;
+            border-top-left-radius: 8rpx;
+            border-top-right-radius: 8rpx;
+            display: flex;
+            align-items: center;
+
+            div {
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              border-right: 1px solid #fff;
+              box-sizing: border-box;
+            }
+
+            div:last-child {
+              border-right: none;
+            }
+          }
+
+          .sunShine-line-item {
+            width: 690rpx;
+            font-size: 22rpx;
+            color: #606060;
+            display: flex;
+            align-items: center;
+            height: 90rpx;
+
+            div {
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              border-right: 1px solid #fff;
+              box-sizing: border-box;
+              text-align: center;
+              padding: 5rpx;
+              height: 100%;
+              line-height: 45rpx;
+              img {
+                width: 32rpx;
+                height: 32rpx;
+              }
+            }
+
+            div:nth-child(2) {
+              overflow: hidden;
+              text-overflow: ellipsis;
+              display: -webkit-box;
+              -webkit-box-orient: vertical;
+              -webkit-line-clamp: 2;
+            }
+
+            div:last-child {
+              border-right: none;
+            }
+          }
+
+          .odd {
+            background-color: #fff;
+          }
+
+          .even {
+            background-color: #EDF4FF;
+          }
+        }
+      }
+  }
+</style>

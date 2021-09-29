@@ -1,457 +1,348 @@
 <template>
   <div class="home">
-    <picker id="area" @change="bindPickerChange" :value="Index" :range="info.Community">
-      <view class="picker-name">
-        {{ info.Community[Index] }}
-        <img mode="widthFix" src="/static/images/selectone.png" alt="" />
-      </view>
-    </picker>
-
-    <ul>
-      <li>
-        <img src="/static/images/required.png" class="required">
-        <img mode="widthFix" src="/static/images/phone.png" alt="" class="logo" />
-        <span>|</span>
-        <input placeholder-style="color:#cbcbcb" type="number" v-model="info.phone" placeholder="请输入联系方式"
-          maxlength="11" />
-      </li>
-
-      <li>
-        <img src="/static/images/required.png" class="required">
-        <img mode="widthFix" src="/static/images/user.png" alt="" style="width: 35rpx;margin-left: 9rpx;"
-          class="logo" />
-        <span>|</span>
-        <input placeholder-style="color:#cbcbcb" type="text" v-model="info.realName" placeholder="请输入真实姓名" />
-      </li>
-
-      <li>
-        <!-- <img src="/static/images/required.png" class="required"> -->
-        <img mode="widthFix" src="/static/images/IDCard.png" alt="" class="logo" style="margin-left: 46rpx;"/>
-        <span>|</span>
-        <input type="idcard" placeholder-style="color:#cbcbcb" v-model="info.idCard" placeholder="请输入身份证号"
-          maxlength="18" />
-      </li>
-
-      <li class="li-picker">
-        <img src="/static/images/required.png" class="required">
-        <img mode="widthFix" src="/static/images/address1.png" alt="" class="logo" />
-        <span>|</span>
-        <!-- <input placeholder-style="color:#cbcbcb" type="text" v-model="info.address"
-          placeholder="请输入楼房号码（xxx幢xxxx室）" /> -->
-        <picker mode="multiSelector" :value="addIndex" :range="addArr" @columnchange="changeNextCol" @change="addChange"
-          class="pickerStyle">
-          <view v-if="info.address==''" style="color: #cbcbcb;">请选择楼房号码</view>
-          <view v-else>
-            {{addArr[0][addIndex[0]]}}{{addArr[1][addIndex[1]]}}
-          </view>
-        </picker>
-        <img src="/static/images/selecttwo.png" style="width:34rpx;margin-left: 0;" alt="" mode="widthFix" />
-      </li>
-
-      <li class="li-picker">
-        <img src="/static/images/required.png" class="required">
-        <img mode="widthFix" src="/static/images/political_status.png" alt="" class="logo" />
-        <span>|</span>
-        <picker @change="PickerChange" :value="Index1" range-key="label" :range="info.status" class="pickerStyle">
-          <view v-if="Index1 == -1" style="color: #cbcbcb;">请选择政治面貌</view>
-          <view v-else>
-            {{ info.status[Index1].label }}
-          </view>
-        </picker>
-        <img src="/static/images/selecttwo.png" style="width:34rpx;margin-left: 0;" alt="" mode="widthFix" />
-      </li>
-      <!-- <li class="li-picker">
-      <img src="/static/images/required.png" class="required">
-        <img mode="widthFix" src="/static/images/age.png" alt="" class="logo"/>
-        <span>|</span>
-        <picker @change="ageChange" :value="ageIndex" range-key="dictValue" :range="info.ageList" class="pickerStyle">
-          <view v-if="ageIndex == -1" style="color: #cbcbcb;">请选择年龄层次</view>
-          <view v-else>
-            {{ info.ageList[ageIndex].dictValue }}
-          </view>
-        </picker>
-        <img src="/static/images/selecttwo.png" style="width:34rpx;margin-left: 0;" alt="" mode="widthFix" />
-      </li> -->
-      <li class="li-picker">
-        <img mode="widthFix" src="/static/images/industry.png" alt="" style="margin-left: 46rpx;" class="logo" />
-        <span>|</span>
-        <picker @change="industryChange" :value="industryIndex" range-key="dictValue" :range="info.industry"
-          class="pickerStyle">
-          <view v-if="industryIndex == -1" style="color: #cbcbcb;">请选择行业属性</view>
-          <view v-else>
-            {{ info.industry[industryIndex].dictValue }}
-          </view>
-        </picker>
-        <img src="/static/images/selecttwo.png" style="width:34rpx;margin-left: 0;" alt="" mode="widthFix" />
-      </li>
-    </ul>
-    <button @tap="ToNext">下一步</button>
-    <button class="loginBtn" open-type='getPhoneNumber' @getphonenumber="getPhoneNumber">去登录</button>
-    <p class="tel">社区联系电话：89098721</p>
+    <div class="box">
+      <img src="/static/images/logo.png" class="logo">
+      <div class="item">
+        <img src="/static/images/realName.png">
+        <input type="text" placeholder="请输入姓名" placeholder-style="color:#C8C9CB;" v-model="name">
+      </div>
+      <!-- <div class="item">
+        <img src="/static/images/idcard.png">
+        <input type="idcard" placeholder="请输入身份证号码" maxlength="18" placeholder-style="color:#C8C9CB;" v-model="idCard">
+      </div> -->
+      <div class="item">
+        <img src="/static/images/mob.png">
+        <input type="number" placeholder="请输入手机号码" maxlength="11" placeholder-style="color:#C8C9CB;" v-model="phone">
+      </div>
+      <div class="item" style="padding: 30rpx 25rpx;">
+        <img src="/static/images/checkCode.png">
+        <input type="text" placeholder="请输入验证码" placeholder-style="color:#C8C9CB;" v-model="checkCode">
+        <div class="check-code" @click="getCode" v-if="!isGet">获取验证码</div>
+        <div class="check-code unClick" v-if="isGet">{{countdown}}s</div>
+      </div>
+      <div class="item">
+        <img src="/static/images/password2.png">
+        <input type="password" placeholder="请输入密码" placeholder-style="color:#C8C9CB;" v-model="password">
+      </div>
+      <div class="item">
+        <img src="/static/images/password2.png">
+        <input type="password" placeholder="请再次输入密码" placeholder-style="color:#C8C9CB;" v-model="confirmPassword">
+      </div>
+      <!-- <div class="item" style="padding: 44rpx 25rpx;">
+        <img src="/static/images/party.png">
+        <span style="color: #303030;margin-right: 86rpx;">是否党员</span>
+        <div class="select-box">
+          <div v-for="(item,index) in isParty" :key="index" class="select-item" @click="select(index)">
+            <img :src="item.isChecked?'/static/images/selected.png':'/static/images/unSelected.png'">
+            <span>{{item.name}}</span>
+          </div>
+        </div>
+      </div> -->
+      <button class="btn" @click="register">确认</button>
+    </div>
   </div>
 </template>
 
 <script>
+  import {md5} from '../../../utils/md5.js'
   export default {
     data() {
       return {
-        Index: 0,
-        Index1: -1,
-        ageIndex: -1,
-        industryIndex: -1,
-        addArr: [],
-        addIndex: [0, 0],
-        info: {
-          status: [{
-            value: 3,
-            label: '党员'
-          },{
-            value: 1,
-            label: '群众'
-          }, {
-            value: 2,
-            label: '团员'
-          },  {
-            value: 4,
-            label: '其他'
-          }],
-          phone: "",
-          realName: "",
-          idCard: "",
-          address: "",
-          Community: ["金邑水岸智慧小区"],
-          json: [],
-          chooseList: []
-        },
-      };
-    },
-    methods: {
-      ToNext() {
-        if (this.reg.checkPhone(this.info.phone) != 'ok') {
-          return wx.showToast({
-            title: this.reg.checkPhone(this.info.phone),
-            icon: 'none',
-            duration: 2000
-          })
-        }
-        if (!this.info.realName) {
-          return wx.showToast({
-            title: '请输入真实姓名',
-            icon: 'none',
-            duration: 2000
-          })
-        }
-        // if (this.reg.isIdCard(this.info.idCard) != 'ok') {
-        //   return wx.showToast({
-        //     title: this.reg.isIdCard(this.info.idCard),
-        //     icon: 'none',
-        //     duration: 2000
-        //   })
-        // }
-        if (!this.info.address) {
-          return wx.showToast({
-            title: '请输入楼房号码',
-            icon: 'none',
-            duration: 2000
-          })
-        }
-        if (this.Index1 < 0) {
-          return wx.showToast({
-            title: '请选择政治面貌',
-            icon: 'none',
-            duration: 2000
-          })
-        }
-        // if (this.ageIndex < 0) {
-        //   return wx.showToast({
-        //     title: '请选择年龄层次',
-        //     icon: 'none',
-        //     duration: 2000
-        //   })
-        // }
-        // if (this.industryIndex < 0) {
-        //   return wx.showToast({
-        //     title: '请选择行业属性',
-        //     icon: 'none',
-        //     duration: 2000
-        //   })
-        // }
-        let data = {}
-        if (this.industryIndex < 0) {
-          data = {
-            phone: this.info.phone,
-            realName: this.info.realName,
-            idCard: this.info.idCard,
-            houseId: this.info.address,
-            politic: Number(this.Index1) + 1
-          }
-        } else {
-          data = {
-            phone: this.info.phone,
-            realName: this.info.realName,
-            idCard: this.info.idCard,
-            houseId: this.info.address,
-            politic: Number(this.Index1) + 1,
-            industryCategory: this.info.industry[this.industryIndex].id
-          }
-        }
-        wx.setStorageSync("registerData", data)
-        wx.navigateTo({
-          url: "/pages/register/label/main"
-        });
-      },
-      // 选小区下拉框
-      bindPickerChange(e) {
-        this.Index = e.target.value;
-      },
-      // 选政治面貌下拉框
-      PickerChange(e) {
-        this.Index1 = e.target.value;
-      },
-      // 年龄层次
-      ageChange(e) {
-        this.ageIndex = e.target.value;
-      },
-      // 行业属性
-      industryChange(e) {
-        this.industryIndex = e.target.value;
-      },
-      getPhoneNumber(e) {
-        if (e.mp.detail.errMsg == "getPhoneNumber:ok") {
-          console.log(e.mp.detail.iv, e.mp.detail.encryptedData, wx.getStorageSync('code'))
-          let data = {
-            iv: e.mp.detail.iv,
-            encryptedData: e.mp.detail.encryptedData,
-            code: wx.getStorageSync('code')
-          }
-          this.api.wxPhoneLogin(data).then(res => {
-            wx.showToast({
-              title: '登录成功',
-              icon: 'success',
-              duration: 1500
-            })
-            if(wx.getStorageSync("loginInfo").faceImg == "") {
-              setTimeout(() => {
-                // wx.switchTab({
-                //   url: '/pages/index/index/main'
-                // })
-                wx.reLaunch({
-                  url: '/pages/informationCollect/face/main'
-                })
-              }, 1500)
-            } else {
-              setTimeout(() => {
-                // wx.switchTab({
-                //   url: '/pages/index/index/main'
-                // })
-                wx.reLaunch({
-                  url: '/pages/index/index/main'
-                })
-              }, 1500)
-            }
-          })
-        } else if (e.mp.detail.errMsg == "getPhoneNumber:fail user deny") {
-          wx.showToast({
-            title: '请注册登录',
-            icon: 'none',
-            duration: 2000
-          })
-        }
-      },
-      changeNextCol(e) {
-        console.log(e)
-        if(e.target.column==0) {
-          let parentId = this.json[e.target.value].id
-          this.api.getHouseId({parentId:parentId}).then(res => {
-            this.chooseList = res.data
-            this.addArr.splice(1,1,res.data.map(function(v){return v.fullName}))
-          })
-        }
-        this.addIndex[e.target.column] = e.target.value;
-      },
-      addChange(e) {
-        console.log(e.target.value)
-        this.addIndex = e.target.value
-        this.info.address = this.chooseList[e.target.value[1]].id
+        name: "",
+        idCard: '',
+        phone: '',
+        checkCode: '',
+        password: '',
+        confirmPassword: '',
+        isParty: [{
+          isChecked: false,
+          name: '是',
+          value: 1
+        }, {
+          isChecked: false,
+          name: '否',
+          value: 2
+        }],
+        partMember: 0,
+        isGet: false,
+        countdown: 60,
+        interval: "",
       }
     },
-    onLoad() {
+    components: {
+
+    },
+    async onLoad() {
       Object.assign(this.$data, this.$options.data())
-      this.api.getDataList('ageSeg').then(res => {
-        this.info.ageList = res
-      })
-      this.api.getDataList('industryCategory').then(res => {
-        this.info.industry = res
-      })
-      let data = {
-        parentId: '1123598813738675201'
-      }
-      this.api.getHouseId(data).then(res => {
-        this.json = res.data
-        this.api.getHouseId({parentId:res.data[0].id}).then(respon => {
-          this.chooseList = respon.data
-          this.addArr = []
-          console.log(this.addArr)
-          this.addArr.push(res.data.map(function(v){return v.fullName}))
-          this.addArr.push(respon.data.map(function(v){return v.fullName}))
-        })
-      })
     },
     onShow() {
-      wx.login({
-        success: (res) => {
-          wx.setStorageSync('code', res.code)
-        }
-      })
+
     },
+    //解底事件
+    onReachBottom() {
+
+    },
+
     onShareAppMessage() {
       return {
 
       }
     },
-  };
+
+    onHide() {
+      clearInterval(this.interval)
+    },
+    onUnload() {
+      clearInterval(this.interval)
+    },
+
+    methods: {
+      getCode() {
+        let that = this
+        if (this.reg.checkPhone(this.phone) != 'ok') {
+          return wx.showToast({
+            title: this.reg.checkPhone(this.phone),
+            icon: 'none',
+            duration: 1500,
+          })
+        } else if (!this.isGet) {
+          let data = {
+            mob: this.phone
+          }
+          this.api.getPhoneCode(data).then(res => {
+          })
+          this.isGet = true
+          this.interval = setInterval(function() {
+            if (that.countdown == 0) {
+              that.isGet = false
+              that.countdown = 60
+              return
+            } else {
+              that.countdown--
+            }
+          }, 1000)
+        }
+      },
+      toPage(url) {
+        this.until.aHref(url)
+      },
+      select(index) {
+        this.isParty.forEach(item => {
+          item.isChecked = false
+        })
+        this.isParty[index].isChecked = true
+        this.partMember = this.isParty[index].value
+      },
+      register(e){
+        if(this.name==""){
+          wx.showToast({
+            title: '请输入姓名',
+            icon: 'none',
+            duration: 1500
+          })
+          return
+        }
+        // if (this.reg.isIdCard(this.idCard) != 'ok') {
+        //   return wx.showToast({
+        //     title: this.reg.isIdCard(this.idCard),
+        //     icon: 'none',
+        //     duration: 1500
+        //   })
+        // }
+        if (this.reg.checkPhone(this.phone) != 'ok') {
+          return wx.showToast({
+            title: this.reg.checkPhone(this.phone),
+            icon: 'none',
+            duration: 1500
+          })
+        }
+        if(this.checkCode==""){
+          wx.showToast({
+            title: '请输入验证码',
+            icon: 'none',
+            duration: 1500
+          })
+          return
+        }
+        if(this.password==""){
+          wx.showToast({
+            title: '请输入密码',
+            icon: 'none',
+            duration: 1500
+          })
+          return
+        }
+        if(this.password.length<6) {
+          wx.showToast({
+            title: '密码须大于6位',
+            icon: 'none',
+            duration: 1500
+          })
+          return
+        }
+        if(this.password!==this.confirmPassword) {
+          wx.showToast({
+            title: '密码不一致',
+            icon: 'none',
+            duration: 1500
+          })
+          return
+        }
+        // if(this.partMember==0){
+        //   wx.showToast({
+        //     title: '请选择是否党员',
+        //     icon: 'none',
+        //     duration: 1500
+        //   })
+        //   return
+        // }
+        wx.getUserProfile({
+          desc: '用于完善个人资料',
+          success:(res)=> {
+            wx.login({
+              success:(loginRes) =>{
+                let data = {
+                  code: loginRes.code,
+                  realName: this.name,
+                  // idCard: this.idCard,
+                  username: this.phone,
+                  avatar: res.userInfo.avatarUrl,
+                  nickName: res.userInfo.nickName,
+                  password: md5(this.password),
+                  partMember: this.partMember,
+                  msgCode: this.checkCode
+                }
+                this.api.register(data).then(res=> {
+                  wx.switchTab({
+                    url: '/pages/index/index/main'
+                  })
+                })
+              }
+            })
+          },
+          fail:(err)=> {
+            wx.login({
+              success:(loginRes) =>{
+                let data = {
+                  code: loginRes.code,
+                  realName: this.name,
+                  // idCard: this.idCard,
+                  username: this.phone,
+                  password: md5(this.password),
+                  partMember: this.partMember,
+                  msgCode: this.checkCode
+                }
+                this.api.register(data).then(res=> {
+                  wx.switchTab({
+                    url: '/pages/index/index/main'
+                  })
+                })
+              }
+            })
+          }
+        })
+
+      }
+    },
+  }
 </script>
 
 <style scoped lang="less">
   @import url("../../../css/common.less");
 
   .home {
-    background-color: #ffffff;
-    box-sizing: border-box;
-    width: 750rpx;
+    width: 100vw;
     height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    position: relative;
+    padding: 20rpx 30rpx;
+    box-sizing: border-box;
 
-    #area {
-      width: 690rpx;
-      margin-top: 52rpx;
-      margin-bottom: 52rpx;
-
-      .picker-name {
-        padding-left: 60rpx;
-        width: 352rpx;
-        height: 60rpx;
-        font-size: 44rpx;
-        font-family: PingFang SC;
-        font-weight: 400;
-        line-height: 60rpx;
-        color: #333333;
-        opacity: 1;
-
-        img {
-          width: 32rpx;
-          height: 32rpx;
-          position: absolute;
-          left: 444rpx;
-          top: 64rpx;
-        }
-      }
-    }
-
-    ul {
-      width: 100vw;
+    .box {
+      width: 100%;
+      padding: 50rpx 60rpx;
+      background-color: #fff;
+      border-radius: 10rpx;
+      box-sizing: border-box;
       display: flex;
       flex-direction: column;
       align-items: center;
+      .logo {
+        width: 189rpx;
+        height: 189rpx;
+        margin-bottom: 35rpx;
+      }
 
-      li {
+      .item {
+        width: 570rpx;
+        padding: 40rpx 25rpx;
+        box-sizing: border-box;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
         display: flex;
         align-items: center;
-        width: 660rpx;
-        height: 100rpx;
-        border-bottom: 1px solid #f1f3f2;
 
-        .required {
-          width: 20rpx;
-          height: 20rpx;
-          margin-right: 26rpx;
-        }
-
-        .logo {
-          width: 44rpx;
-          margin-right: 24rpx;
-        }
-
-        span {
-          color: #cbcbcb;
-          width: 1px;
-          margin-right: 34rpx;
+        img {
+          width: 25rpx;
+          height: 25rpx;
+          margin-right: 30rpx;
+          flex-shrink: 1;
         }
 
         input {
           flex: 1;
-          overflow: hidden;
-          text-overflow: ellipsis;
-          height: 40rpx;
-          font-size: 28rpx;
-          font-weight: 400;
-          line-height: 40rpx;
+          font-size: 24rpx;
+          font-weight: 500;
+          color: #000;
         }
-      }
 
-      li:last-child {
-        border: none;
-      }
+        .check-code {
+          width: 180rpx;
+          height: 60rpx;
+          background-color: #EC2C17;
+          line-height: 60rpx;
+          color: #fff;
+          text-align: center;
+          font-size: 24rpx;
+          font-weight: 500;
+          border-radius: 30rpx;
+        }
 
-      .li-picker {
-        .pickerStyle {
+        .unClick {
+          background-color: #C8C9CB;
+        }
+
+        .select-box {
+          display: flex;
+          align-items: center;
+          justify-content: space-around;
           flex: 1;
-          height: 40rpx;
-          line-height: 40rpx;
+          font-size: 24rpx;
+          font-weight: 500;
+          color: #303030;
 
-          view {
-            width: 100%;
-            font-size: 28rpx;
-            font-weight: 400;
-            overflow: hidden;
-            text-overflow: ellipsis;
+          .select-item {
+            display: flex;
+            align-items: center;
+
+            img {
+              width: 36rpx;
+              height: 36rpx;
+              margin-right: 15rpx;
+            }
           }
         }
       }
-    }
 
-    button {
-      width: 660rpx;
-      height: 88rpx;
-      background: #eb020e;
-      box-shadow: 0rpx 6rpx 12rpx rgba(248, 38, 38, 0.05);
-      opacity: 1;
-      border-radius: 14rpx;
-      font-size: 28rpx;
-      font-family: PingFang SC;
-      font-weight: 400;
-      line-height: 88rpx;
-      color: #ffffff;
-      // 挑
-      margin-top: 100rpx;
-      text-align: center;
-    }
-
-    .loginBtn {
-      width: 400rpx;
-      height: 88rpx;
-      font-size: 32rpx;
-      margin-top: 40rpx;
-      box-shadow: none;
-      text-decoration: underline;
-      color: #eb020e;
-      background-color: #fff;
-    }
-
-    .tel {
-      height: 40rpx;
-      font-size: 28rpx;
-      font-family: PingFang SC;
-      font-weight: 400;
-      line-height: 40rpx;
-      color: #cbcbcb;
-      opacity: 1;
-      text-align: center;
-      position: absolute;
-      bottom: 40rpx;
+      .btn {
+        width: 570rpx;
+        height: 70rpx;
+        background-color: #EC2C17;
+        border-radius: 35rpx;
+        line-height: 70rpx;
+        text-align: center;
+        font-size: 30rpx;
+        color: #fff;
+        font-weight: 500;
+        margin-top: 85rpx;
+      }
     }
   }
 </style>

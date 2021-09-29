@@ -76,9 +76,7 @@ export default {
 
 
   async onShow(options) {
-    //调增加访客数量的接口
-    this.api.verifyToken('visited')
-
+  
   },
 
   log() {

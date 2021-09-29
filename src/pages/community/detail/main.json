@@ -1,7 +1,0 @@
-{
-  "navigationBarTitleText":"问题详情",
-  "onReachBottomDistance": 150,
-  "enablePullDownRefresh": false,
-  "navigationBarBackgroundColor": "#EB020E",
-  "navigationBarTextStyle": "white"
-}

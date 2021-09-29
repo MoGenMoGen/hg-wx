@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText":"我的发起",
+  "onReachBottomDistance": 150,
+  "navigationBarBackgroundColor": "#EC2C17",
+  "navigationBarTextStyle": "white",
+  "enablePullDownRefresh": false
+}
