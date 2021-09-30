@@ -5,89 +5,12 @@
     "pages/personal/personInfo/main",
     "pages/index/richText/main",
     "pages/index/newDetail/main",
-    "pages/index/scan/main",
-    "pages/partyMember/list/main",
-    "pages/partyMember/detail/main",
     "pages/register/index/main",
     "pages/register/login/main",
-    "pages/personal/apply/main",
-    "pages/personal/modifyPsw/main",
-    "pages/personal/report/main",
-    "pages/personal/reportInfo/main",
-    "pages/personal/issue/main",
-    "pages/personal/initiate/main",
-    "pages/personal/vote/main",
-    "pages/homeStead/list/main",
-    "pages/homeStead/detail/main",
-    "pages/homeStead/apply/main",
-    "pages/homeStead/applyDetail/main",
-    "pages/travel/list/main",
-    "pages/travel/site/main",
-    "pages/travel/west/main",
-    "pages/convenience/list/main",
-    "pages/travel/ten/main",
-    "pages/travel/shop/main",
-    "pages/travel/monitor/main",
-    "pages/convenience/quesList/main",
-    "pages/convenience/quesAsk/main",
-    "pages/convenience/report/main",
-    "pages/convenience/matter/main",
-    "pages/convenience/quesDetail/main",
-    "pages/convenience/stampList/main",
-    "pages/convenience/stampDetail/main",
-    "pages/personal/study/main",
-    "pages/travel/eat/main",
-    "pages/personal/studyList/main",
-    "pages/convenience/reportList/main",
-    "pages/travel/video/main"
+    "pages/dynamic/index/main",
+    "pages/workBench/index/main",
+    "pages/message/index/main"
   ],
-  "subpackages": [{
-    "root": "pages/party",
-    "pages": [
-      "list/main",
-      "activeDetail/main",
-      "video/main",
-      "historyList/main",
-      "newDetail/main",
-      "treasureBox/main",
-      "videoList/main",
-      "meetsClass/main",
-      "wishList/main",
-      "wishDetail/main",
-      "wishApply/main",
-      "honorList/main",
-      "activeList/main",
-      "leaderList/main",
-      "developList/main",
-      "gridPartyList/main",
-      "pioneerList/main",
-      "separateList/main",
-      "historyDetail/main",
-      "webView/main"
-    ]
-  },{
-    "root": "pages/honest",
-    "pages": [
-      "list/main",
-      "say/main",
-      "opinion/main",
-      "apply/main",
-      "supervise/main",
-      "meetingList/main",
-      "meetingDetail/main",
-      "assetsList/main",
-      "assetsDetail/main",
-      "projectList/main",
-      "openList/main",
-      "openDetail/main"
-    ]
-  }],
-  "preloadRule": {
-    "pages/index/index/main": {
-      "network": "all",
-      "packages": ["pages/party","pages/honest"]
-    }
-  },
   "permission": {
     "scope.userLocation": {
       "desc": "你的位置信息将用于小程序位置接口的效果展示"
@@ -107,13 +30,31 @@
     "selectedColor": "#EC2C17",
     "list": [
       {
-        "text": "数字乡村",
+        "text": "首页",
         "pagePath": "pages/index/index/main",
         "iconPath": "/static/images/home-unselected.png",
         "selectedIconPath": "/static/images/home-selected.png"
       },
       {
-        "text": "个人中心",
+        "text": "动态",
+        "pagePath": "pages/dynamic/index/main",
+        "iconPath": "/static/images/mine-unselected.png",
+        "selectedIconPath": "/static/images/mine-selected.png"
+      },
+      {
+        "text": "工作台",
+        "pagePath": "pages/workBench/index/main",
+        "iconPath": "/static/images/mine-unselected.png",
+        "selectedIconPath": "/static/images/mine-selected.png"
+      },
+      {
+        "text": "消息",
+        "pagePath": "pages/message/index/main",
+        "iconPath": "/static/images/mine-unselected.png",
+        "selectedIconPath": "/static/images/mine-selected.png"
+      },
+      {
+        "text": "我的",
         "pagePath": "pages/personal/index/main",
         "iconPath": "/static/images/mine-unselected.png",
         "selectedIconPath": "/static/images/mine-selected.png"

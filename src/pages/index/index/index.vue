@@ -261,20 +261,9 @@
     async onLoad() {
       Object.assign(this.$data, this.$options.data())
       this.api.verifyToken().then(() => {
-        this.api.adrertList('home').then(res => {
-          this.banner = res.records[0].img.split(",")
-        })
-        this.getList()
       });
-      this.api.getWeather().then(res=>{
-        this.numList[0].num = res.tem2 + '~' + res.tem1 + '℃' //温度
-        this.numList[0].title = res.wea + ' ' //天气名字
-        this.numList[0].img = '/static/images/' + res.wea_img + '.png' //天气图片
-        this.numList[1].num = res.air_pm25 //pm2.5
-      })
     },
     onShow() {
-      this.personType = wx.getStorageSync('loginInfo').personType
     },
     //解底事件
     onReachBottom() {

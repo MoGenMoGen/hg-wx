@@ -9,7 +9,7 @@ const app = getApp()
 const hostUrl = config.serverURL;
 // Vue.prototype.globalData = getApp().globalData
 
-const appid = 'wxa8cbbc83040b5537'
+const appid = 'wxa2af9a033ae21107'
 
 function get(url, data, header, loading) {
   // console.log(url)
