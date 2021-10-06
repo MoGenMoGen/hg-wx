@@ -32,17 +32,17 @@
 </template>
 
 <script>
-  import img1 from "../../../../static/images/myInfo.png";
-  import img2 from "../../../../static/images/myApply.png";
-  import img3 from "../../../../static/images/myVote.png";
-  import img4 from "../../../../static/images/updatePaw.png";
-  import img5 from "../../../../static/images/nyIssue.png";
-  import img6 from "../../../../static/images/myReport.png";
-  import img7 from "../../../../static/images/myInitiate.png";
-  import img8 from "../../../../static/images/myStudy.png";
-  import arrowR from "../../../../static/images/arrowR.png";
-  import arrowRWhite from "../../../../static/images/arrowRWhite.png";
-  import dh from "../../../../static/images/dh.png";
+  // import img1 from "../../../../static/images/myInfo.png";
+  // import img2 from "../../../../static/images/myApply.png";
+  // import img3 from "../../../../static/images/myVote.png";
+  // import img4 from "../../../../static/images/updatePaw.png";
+  // import img5 from "../../../../static/images/nyIssue.png";
+  // import img6 from "../../../../static/images/myReport.png";
+  // import img7 from "../../../../static/images/myInitiate.png";
+  // import img8 from "../../../../static/images/myStudy.png";
+  // import arrowR from "../../../../static/images/arrowR.png";
+  // import arrowRWhite from "../../../../static/images/arrowRWhite.png";
+  // import dh from "../../../../static/images/dh.png";
   export default {
     data() {
       return {
@@ -52,48 +52,49 @@
         img4,
         info: {},
         userList:['游客','村民','用户','管理员'],
-        menuList: [{
-            img: img1,
-            nm: "个人信息",
-            href: "/pages/personal/personInfo/main",
-            isShow: true
-          },
-          {
-            img: img2,
-            nm: "我的申请",
-            href: "/pages/personal/apply/main",
-            isShow: true
-          },
-          {
-            img: img3,
-            nm: "我的投票",
-            href: "/pages/personal/vote/main",
-            isShow: true
-          },
-          {
-            img: img5,
-            nm: "我的提问",
-            href: "/pages/personal/issue/main",
-            isShow: true
-          },
-          {
-            img: img6,
-            nm: "我的上报",
-            href: "/pages/personal/report/main",
-            isShow: true
-          },
-          {
-            img: img7,
-            nm: "我的发起",
-            href: "/pages/personal/initiate/main",
-            isShow: true
-          },
-          {
-            img: img8,
-            nm: "我的学习",
-            href: "/pages/personal/studyList/main",
-            isShow: false
-          }
+        menuList: [
+          // {
+          //   img: img1,
+          //   nm: "个人信息",
+          //   href: "/pages/personal/personInfo/main",
+          //   isShow: true
+          // },
+          // {
+          //   img: img2,
+          //   nm: "我的申请",
+          //   href: "/pages/personal/apply/main",
+          //   isShow: true
+          // },
+          // {
+          //   img: img3,
+          //   nm: "我的投票",
+          //   href: "/pages/personal/vote/main",
+          //   isShow: true
+          // },
+          // {
+          //   img: img5,
+          //   nm: "我的提问",
+          //   href: "/pages/personal/issue/main",
+          //   isShow: true
+          // },
+          // {
+          //   img: img6,
+          //   nm: "我的上报",
+          //   href: "/pages/personal/report/main",
+          //   isShow: true
+          // },
+          // {
+          //   img: img7,
+          //   nm: "我的发起",
+          //   href: "/pages/personal/initiate/main",
+          //   isShow: true
+          // },
+          // {
+          //   img: img8,
+          //   nm: "我的学习",
+          //   href: "/pages/personal/studyList/main",
+          //   isShow: false
+          // }
         ],
       };
     },

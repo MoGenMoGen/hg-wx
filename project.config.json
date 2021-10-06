@@ -1,114 +1,114 @@
 {
-  "description": "项目配置文件。",
-  "setting": {
-    "urlCheck": false,
-    "es6": true,
-    "enhance": false,
-    "postcss": true,
-    "preloadBackgroundData": false,
-    "minified": true,
-    "newFeature": true,
-    "coverView": true,
-    "nodeModules": true,
-    "autoAudits": false,
-    "showShadowRootInWxmlPanel": true,
-    "scopeDataCheck": false,
-    "uglifyFileName": false,
-    "checkInvalidKey": true,
-    "checkSiteMap": true,
-    "uploadWithSourceMap": true,
-    "compileHotReLoad": false,
-    "lazyloadPlaceholderEnable": false,
-    "useMultiFrameRuntime": true,
-    "useApiHook": true,
-    "useApiHostProcess": true,
-    "babelSetting": {
-      "ignore": [],
-      "disablePlugins": [],
-      "outputPath": ""
-    },
-    "enableEngineNative": false,
-    "useIsolateContext": true,
-    "userConfirmedBundleSwitch": false,
-    "packNpmManually": false,
-    "packNpmRelationList": [],
-    "minifyWXSS": true,
-    "showES6CompileOption": false
-  },
-  "miniprogramRoot": "dist/wx/",
-  "compileType": "miniprogram",
-  "appid": "wxa2af9a033ae21107",
-  "projectname": "%E6%95%B0%E5%AD%97%E4%B9%A1%E6%9D%91",
-  "simulatorType": "wechat",
-  "simulatorPluginLibVersion": {},
-  "condition": {
-    "search": {
-      "list": []
-    },
-    "conversation": {
-      "list": []
-    },
-    "plugin": {
-      "list": []
-    },
-    "game": {
-      "currentL": -1,
-      "list": []
-    },
-    "gamePlugin": {
-      "list": []
-    },
-    "miniprogram": {
-      "list": [
-        {
-          "id": -1,
-          "name": "pages/product/detail/main",
-          "pathName": "pages/product/detail/main",
-          "query": "id= 4763992372564992",
-          "scene": null
+    "description": "项目配置文件。",
+    "setting": {
+        "urlCheck": false,
+        "es6": true,
+        "enhance": false,
+        "postcss": true,
+        "preloadBackgroundData": false,
+        "minified": true,
+        "newFeature": true,
+        "coverView": true,
+        "nodeModules": true,
+        "autoAudits": false,
+        "showShadowRootInWxmlPanel": true,
+        "scopeDataCheck": false,
+        "uglifyFileName": false,
+        "checkInvalidKey": true,
+        "checkSiteMap": true,
+        "uploadWithSourceMap": true,
+        "compileHotReLoad": false,
+        "lazyloadPlaceholderEnable": false,
+        "useMultiFrameRuntime": true,
+        "useApiHook": true,
+        "useApiHostProcess": true,
+        "babelSetting": {
+            "ignore": [],
+            "disablePlugins": [],
+            "outputPath": ""
         },
-        {
-          "id": -1,
-          "name": "pages/product/search/main",
-          "pathName": "pages/product/search/main",
-          "query": "",
-          "scene": null
+        "enableEngineNative": false,
+        "useIsolateContext": true,
+        "userConfirmedBundleSwitch": false,
+        "packNpmManually": false,
+        "packNpmRelationList": [],
+        "minifyWXSS": true,
+        "showES6CompileOption": false
+    },
+    "miniprogramRoot": "dist/wx/",
+    "compileType": "miniprogram",
+    "appid": "wxa2af9a033ae21107",
+    "projectname": "%E6%9D%AD%E9%92%A2",
+    "simulatorType": "wechat",
+    "simulatorPluginLibVersion": {},
+    "condition": {
+        "search": {
+            "list": []
         },
-        {
-          "id": -1,
-          "name": "pages/order/list/main",
-          "pathName": "pages/order/list/main",
-          "query": "",
-          "scene": null
+        "conversation": {
+            "list": []
         },
-        {
-          "id": -1,
-          "name": "pages/product/detail/main",
-          "pathName": "pages/product/detail/main",
-          "query": "",
-          "scene": null
+        "plugin": {
+            "list": []
         },
-        {
-          "id": -1,
-          "name": "pages/my/myIntegral/main",
-          "pathName": "pages/my/myIntegral/main",
-          "query": "",
-          "scene": null
+        "game": {
+            "currentL": -1,
+            "list": []
         },
-        {
-          "id": -1,
-          "name": "pages/address/list/main",
-          "pathName": "pages/address/list/main",
-          "query": "",
-          "scene": null
+        "gamePlugin": {
+            "list": []
         },
-        {
-          "id": -1,
-          "name": "pages/message/list/main",
-          "pathName": "pages/message/list/main",
-          "scene": null
+        "miniprogram": {
+            "list": [
+                {
+                    "id": -1,
+                    "name": "pages/product/detail/main",
+                    "pathName": "pages/product/detail/main",
+                    "query": "id= 4763992372564992",
+                    "scene": null
+                },
+                {
+                    "id": -1,
+                    "name": "pages/product/search/main",
+                    "pathName": "pages/product/search/main",
+                    "query": "",
+                    "scene": null
+                },
+                {
+                    "id": -1,
+                    "name": "pages/order/list/main",
+                    "pathName": "pages/order/list/main",
+                    "query": "",
+                    "scene": null
+                },
+                {
+                    "id": -1,
+                    "name": "pages/product/detail/main",
+                    "pathName": "pages/product/detail/main",
+                    "query": "",
+                    "scene": null
+                },
+                {
+                    "id": -1,
+                    "name": "pages/my/myIntegral/main",
+                    "pathName": "pages/my/myIntegral/main",
+                    "query": "",
+                    "scene": null
+                },
+                {
+                    "id": -1,
+                    "name": "pages/address/list/main",
+                    "pathName": "pages/address/list/main",
+                    "query": "",
+                    "scene": null
+                },
+                {
+                    "id": -1,
+                    "name": "pages/message/list/main",
+                    "pathName": "pages/message/list/main",
+                    "scene": null
+                }
+            ]
         }
-      ]
     }
-  }
 }
