@@ -358,7 +358,7 @@
         img {
           width: 80rpx;
           height: 80rpx;
-          margin-bottom: 20rpx;
+          margin-bottom: 10rpx;
         }
         span {
           font-size: 24rpx;
