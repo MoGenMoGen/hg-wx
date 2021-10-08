@@ -9,6 +9,7 @@
     "pages/register/login/main",
     "pages/dynamic/index/main",
     "pages/workBench/index/main",
+     "pages/workBench/service/main",
     "pages/message/index/main"
   ],
   "permission": {
