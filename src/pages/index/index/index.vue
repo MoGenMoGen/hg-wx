@@ -375,7 +375,7 @@
       box-sizing: border-box;
       display: flex;
       align-items: center;
-      margin: 20rpx auto;
+      margin: 0 auto 20rpx;
       .notice-left {
         font-size: 28rpx;
         color: #FF5400;
