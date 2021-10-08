@@ -2,6 +2,6 @@
   "navigationBarTitleText":"",
   "onReachBottomDistance": 150,
   "navigationBarTextStyle": "white",
-  "navigationBarBackgroundColor": "#EC2C17",
+  "navigationBarBackgroundColor":"#276EF2",
   "enablePullDownRefresh": false
 }

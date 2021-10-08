@@ -358,7 +358,7 @@
         img {
           width: 80rpx;
           height: 80rpx;
-          margin-bottom: 20rpx;
+          margin-bottom: 10rpx;
         }
         span {
           font-size: 24rpx;
@@ -375,7 +375,7 @@
       box-sizing: border-box;
       display: flex;
       align-items: center;
-      margin: 20rpx auto;
+      margin: 0 auto 20rpx;
       .notice-left {
         font-size: 28rpx;
         color: #FF5400;
