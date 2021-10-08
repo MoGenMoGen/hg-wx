@@ -2,29 +2,25 @@
   <div class="home">
     <div class="info" @click="toPage('/pages/personal/personInfo/main')">
       <div class="img">
-        <image :src="info.avatar==''?'/static/images/avatar.png':info.avatar" mode="aspectFill" class="userImg" />
-        <image :src="dh" mode="widthFix" class="dh" v-if="info.partMember==1" />
+        <image :src="info.avatar" mode="aspectFill" class="userImg" />
+        <!-- <image :src="dh" mode="widthFix" class="dh" v-if="info.partMember==1" /> -->
       </div>
       <div class="cont">
-        <p>
-          <span>{{ info.nickName }}</span><span>({{ info.phone==''?info.account:info.phone }})</span>
+        <p>{{info.phone}}
         </p>
-        <p>{{ userList[info.personType] }}</p>
+        <p>欢迎光临</p>
       </div>
-      <image :src="arrowRWhite" mode="widthFix" />
+      <!-- <image :src="arrowRWhite" mode="widthFix" /> -->
     </div>
     <ul>
-      <li v-for="(item, index) in menuList" :key="index" @click="toPage(item.href)" v-if="item.isShow">
-        <image :src="item.img" mode="widthFix" />
-        <p>{{ item.nm }}</p>
-        <image :src="arrowR" mode="widthFix" />
-      </li>
-    </ul>
-    <ul>
-      <li @click="toPage('/pages/personal/modifyPsw/main')">
-        <image :src="img4" mode="widthFix" />
-        <p>修改密码</p>
-        <image :src="arrowR" mode="widthFix" />
+      <li v-for="(item, index) in menuList" :key="index" @click="toPage(item.href)">
+        <!-- <image :src="item.img" mode="widthFix" /> -->
+        <div>{{ item.nm }}</div>
+        <div>
+          <div>{{item.value}}</div>
+        <image src="/static/images/arrowR.png" style="margin-left:30rpx;" mode="widthFix" v-show='item.isarrow' />
+        </div>
+        
       </li>
     </ul>
     <div class="loginOutBtn" @click="loginOut()">退出登录</div>
@@ -32,91 +28,64 @@
 </template>
 
 <script>
-  // import img1 from "../../../../static/images/myInfo.png";
-  // import img2 from "../../../../static/images/myApply.png";
-  // import img3 from "../../../../static/images/myVote.png";
-  // import img4 from "../../../../static/images/updatePaw.png";
-  // import img5 from "../../../../static/images/nyIssue.png";
-  // import img6 from "../../../../static/images/myReport.png";
-  // import img7 from "../../../../static/images/myInitiate.png";
-  // import img8 from "../../../../static/images/myStudy.png";
-  // import arrowR from "../../../../static/images/arrowR.png";
-  // import arrowRWhite from "../../../../static/images/arrowRWhite.png";
-  // import dh from "../../../../static/images/dh.png";
+  
   export default {
     data() {
       return {
-        arrowR,
-        arrowRWhite,
-        dh,
-        img4,
-        info: {},
-        userList:['游客','村民','用户','管理员'],
+       
+        info: {
+          avatar:'https://tse1-mm.cn.bing.net/th/id/OIP-C.-NoLyCcaIpFEueTKnNIZWQHaHa?w=208&h=208&c=7&r=0&o=5&pid=1.7',
+          phone:'13255881234'
+        },
         menuList: [
-          // {
-          //   img: img1,
-          //   nm: "个人信息",
-          //   href: "/pages/personal/personInfo/main",
-          //   isShow: true
-          // },
-          // {
-          //   img: img2,
-          //   nm: "我的申请",
-          //   href: "/pages/personal/apply/main",
-          //   isShow: true
-          // },
-          // {
-          //   img: img3,
-          //   nm: "我的投票",
-          //   href: "/pages/personal/vote/main",
-          //   isShow: true
-          // },
-          // {
-          //   img: img5,
-          //   nm: "我的提问",
-          //   href: "/pages/personal/issue/main",
-          //   isShow: true
-          // },
-          // {
-          //   img: img6,
-          //   nm: "我的上报",
-          //   href: "/pages/personal/report/main",
-          //   isShow: true
-          // },
-          // {
-          //   img: img7,
-          //   nm: "我的发起",
-          //   href: "/pages/personal/initiate/main",
-          //   isShow: true
-          // },
-          // {
-          //   img: img8,
-          //   nm: "我的学习",
-          //   href: "/pages/personal/studyList/main",
-          //   isShow: false
-          // }
+          {
+            nm: "登录名",
+            value:'13255881234',
+            isarrow:false
+          },
+          {
+            nm: "修改密码",
+            value:'',
+            isarrow:true
+
+          },
+          {
+            nm: "姓名",
+            value:'张三',
+            isarrow:false
+
+
+          },
+          {
+            nm: "性别",
+            value:'女',
+            isarrow:false
+
+
+          },
+          {
+            nm: "联系方式",
+            isarrow:false,
+            value:'13255881234',
+
+          },
+          {
+            nm: "联系邮箱",
+            value:'',
+            isarrow:false
+
+          },
+          
         ],
       };
     },
     components: {},
-    async onLoad() {},
+    async onLoad() {
+      console.log(this.info.avatar)
+    },
     onShow() {
       Object.assign(this.$data, this.$options.data())
-      //这个函数是确保在调接口前有token，如果当前页面的接口不需要token，可以不用
-      this.api.verifyToken().then(() => {
-        this.getInfo()
-        if(wx.getStorageSync('loginInfo').partMember) {
-          this.api.getPartyMemberDetail({id: wx.getStorageSync('loginInfo').partId}).then(res => {
-            if(res.separate==1) {
-              this.menuList[6].isShow = true
-            } else {
-              this.menuList[6].isShow = false
-            }
-          })
-        } else {
-          this.menuList[6].isShow = false
-        }
-      });
+     
     },
     //解底事件
     onReachBottom() {},
@@ -230,17 +199,13 @@
       li {
         display: flex;
         align-items: center;
-        padding-right: 25rpx;
+        padding-right: 54rpx;
+        padding-left: 54rpx;
+        justify-content: space-between;
         height: 104rpx;
 
         &:not(:last-of-type) {
           border-bottom: 1px solid #f1f1f1;
-        }
-
-        image:first-of-type {
-          width: 32rpx;
-          margin-left: 40rpx;
-          margin-right: 20rpx;
         }
 
         image:last-of-type {

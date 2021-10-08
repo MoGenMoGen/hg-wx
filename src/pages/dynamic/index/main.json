@@ -1,5 +1,7 @@
 {
-  "navigationBarTitleText":"",
+  "navigationBarTitleText":"动态",
   "onReachBottomDistance": 150,
-  "enablePullDownRefresh": false
+  "enablePullDownRefresh": false,
+  "navigationBarBackgroundColor": "#276EF2",
+  "navigationBarTextStyle": "white"
 }
