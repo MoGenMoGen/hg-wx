@@ -9,12 +9,17 @@
     </div>
     <div class="list-item" v-for="(item,index) in list" :key="index" v-if="list.length>0">
       <div class="list-item-top">
-        <span>聚联科技有限公司</span>
-        <span>135091234567</span>
+        <span>杭州幻影文化有限公司</span>
       </div>
       <div class="list-item-bottom">
-        <span><img src="/static/images/server-logo.png">法务咨询服务</span>
-        <div>审核</div>
+        <div>
+          <span><img src="/static/images/company-logo.png">企业注册需求</span>
+          <span><img src="/static/images/time-logo.png">2021-09-15  09:30:00</span>
+        </div>
+        <div>
+          <span><img src="/static/images/people-logo.png">张先生</span>
+          <span><img src="/static/images/phone.png">15800009999</span>
+        </div>
       </div>
     </div>
     <div class="no-data" v-if="list.length==0">
@@ -150,37 +155,32 @@
           font-size: 28rpx;
           color: #303030;
         }
-        span:last-child {
-          font-size: 24rpx;
-          color: #909090;
-        }
       }
       .list-item-bottom {
         display: flex;
-        align-items: center;
-        justify-content: space-between;
+        flex-direction: column;
         padding: 30rpx;
         box-sizing: border-box;
-        span {
-          font-size: 24rpx;
-          color: #909090;
+        div {
+          width: 100%;
           display: flex;
           align-items: center;
-          img {
-            width: 21rpx;
-            height: 21rpx;
-            margin-right: 16rpx;
+          margin-bottom: 20rpx;
+          span {
+            width: 50%;
+            font-size: 24rpx;
+            color: #909090;
+            display: flex;
+            align-items: center;
+            img {
+              width: 21rpx;
+              height: 21rpx;
+              margin-right: 16rpx;
+            }
           }
         }
-        div {
-          width: 131rpx;
-          height: 43rpx;
-          line-height: 43rpx;
-          background-color: #FF5400;
-          color: #fff;
-          font-size: 24rpx;
-          text-align: center;
-          border-radius: 20rpx;
+        div:last-child {
+          margin-bottom: 0;
         }
       }
     }

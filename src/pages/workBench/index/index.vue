@@ -329,42 +329,42 @@
               {
                 url: "/static/images/运营拜访.png",
                 title: "运营拜访",
-                pageUrl: ""
+                pageUrl: "/pages/workBench/operationVisit/main"
               },
               {
                 url: "/static/images/政策评审.png",
                 title: "政策评审",
-                pageUrl: ""
+                pageUrl: "/pages/workBench/policyReview/main"
               },
               {
                 url: "/static/images/装修管理.png",
                 title: "装修管理",
-                pageUrl: ""
+                pageUrl: "/pages/workBench/decorationManagement/main"
               },
               {
                 url: "/static/images/报修管理.png",
                 title: "报修管理",
-                pageUrl: ""
+                pageUrl: "/pages/workBench/repairManagement/main"
               },
               {
                 url: "/static/images/科技成果.png",
                 title: "科技成果",
-                pageUrl: ""
+                pageUrl: "/pages/workBench/technologicalAchievements/main"
               },
               {
                 url: "/static/images/科技需求.png",
                 title: "科技需求",
-                pageUrl: ""
+                pageUrl: "/pages/workBench/technologicalNeeds/main"
               },
               {
                 url: "/static/images/资源信息.png",
                 title: "资源信息",
-                pageUrl: ""
+                pageUrl: "/pages/workBench/resourceInformation/main"
               },
               {
                 url: "/static/images/需求信息.png",
                 title: "需求信息",
-                pageUrl: ""
+                pageUrl: "/pages/workBench/demandInformation/main"
               },
               {
                 url: "/static/images/服务商.png",
@@ -374,7 +374,7 @@
               {
                 url: "/static/images/投融资服务.png",
                 title: "投融资服务",
-                pageUrl: ""
+                pageUrl: "/pages/workBench/investmentAndFinancing/main"
               },
 
             ]

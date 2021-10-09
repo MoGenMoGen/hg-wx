@@ -1,0 +1,6 @@
+{
+ "navigationBarTitleText":"政策申报",
+ "onReachBottomDistance": 150,
+ "enablePullDownRefresh": false,
+  "navigationBarTextStyle": "white"
+}

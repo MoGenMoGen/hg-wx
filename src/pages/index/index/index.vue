@@ -78,7 +78,7 @@
           <img src="/static/images/xwzx.png">
           <span>新闻资讯</span>
         </div>
-        <div class="module-right" @click="toPage('/pages/honest/list/main?selectIndex=1')">
+        <div class="module-right" @click="toTabPage('/pages/dynamic/index/main','2')">
           <span>查看更多</span>
           <img src="/static/images/arrowRight.png">
         </div>
@@ -103,7 +103,7 @@
           <img src="/static/images/cxhd.png">
           <span>创新活动</span>
         </div>
-        <div class="module-right" @click="toPage('/pages/honest/list/main?selectIndex=3')">
+        <div class="module-right" @click="toTabPage('/pages/dynamic/index/main','1')">
           <span>查看更多</span>
           <img src="/static/images/arrowRight.png">
         </div>
@@ -159,7 +159,7 @@
         serviceType: [{
           serviceTitle: "供需资源",
           serviceImg: "/static/images/gxzy.png",
-          url: ''
+          url: '/pages/index/resources/main'
         }, {
           serviceTitle: "园区党建",
           serviceImg: "/static/images/yqdj.png",
@@ -167,7 +167,7 @@
         }, {
           serviceTitle: "投融资",
           serviceImg: "/static/images/trz.png",
-          url: ''
+          url: '/pages/workBench/investmentAndFinancing/main'
         }, {
           serviceTitle: "预约参观",
           serviceImg: "/static/images/yycg.png",
@@ -175,15 +175,15 @@
         },{
           serviceTitle: "装修管理",
           serviceImg: "/static/images/zxgl.png",
-          url: ''
+          url: '/pages/workBench/decorationManagement/main'
         }, {
           serviceTitle: "报修管理",
           serviceImg: "/static/images/bxgl.png",
-          url: ''
+          url: '/pages/workBench/repairManagement/main'
         }, {
           serviceTitle: "政策申报",
           serviceImg: "/static/images/zcsb.png",
-          url: ''
+          url: '/pages/index/policyDeclaration/main'
         }, {
           serviceTitle: "科技资源",
           serviceImg: "/static/images/kjzy.png",
@@ -284,6 +284,14 @@
     methods: {
       toPage(url) {
         this.until.aHref(url)
+      },
+      toTabPage(url,index) {
+        if(index) {
+          this.until.seSave('titleIndex',index)
+        }
+        wx.switchTab({
+          url
+        })
       },
       areaIndexChange(e) {
         this.areaIndex = e.mp.detail.current

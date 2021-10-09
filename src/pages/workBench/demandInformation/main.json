@@ -1,0 +1,6 @@
+{
+ "navigationBarTitleText":"需求信息",
+ "onReachBottomDistance": 150,
+ "enablePullDownRefresh": false,
+  "navigationBarTextStyle": "white"
+}

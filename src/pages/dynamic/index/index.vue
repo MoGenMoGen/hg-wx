@@ -162,8 +162,15 @@ export default {
   },
   computed: {},
   components: {},
-  async onLoad(options) {},
-  onShow() {},
+  async onLoad(options) {
+    
+  },
+  onShow() {
+    if(this.until.seGet('titleIndex')) {
+      this.titleIndex = Number(this.until.seGet('titleIndex')) - 1
+      this.until.seRemove('titleIndex')
+    }
+  },
   //解底事件
   onReachBottom() {},
 

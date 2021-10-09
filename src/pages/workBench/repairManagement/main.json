@@ -1,0 +1,6 @@
+{
+ "navigationBarTitleText":"报修管理",
+ "onReachBottomDistance": 150,
+ "enablePullDownRefresh": false,
+  "navigationBarTextStyle": "white"
+}

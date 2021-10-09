@@ -1,0 +1,6 @@
+{
+ "navigationBarTitleText":"科技成果",
+ "onReachBottomDistance": 150,
+ "enablePullDownRefresh": false,
+  "navigationBarTextStyle": "white"
+}

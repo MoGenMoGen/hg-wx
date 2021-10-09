@@ -1,6 +1,8 @@
 首页：pages/index/index/main
-富文本：pages/index/richText/main
-新闻详情：pages/index/newDetail/main
+富文本：pages/index/richText/main（暂时没用）
+新闻详情：pages/index/newDetail/main（暂时没用）
+供需资源：pages/index/resources/main
+政策申报：pages/index/policyDeclaration/main
 
 个人中心 ：pages/personal/index/main
 个人信息：pages/personal/personInfo/main
@@ -10,5 +12,16 @@
 动态：pages/dynamic/index/main
 
 工作台：pages/workBench/index/main
+运营拜访：pages/workBench/operationVisit/main
+政策评审：pages/workBench/policyReview/main
+装修管理：pages/workBench/decorationManagement/main
+报修管理：pages/workBench/repairManagement/main
+科技成果：pages/workBench/technologicalAchievements/main
+科技需求：pages/workBench/technologicalNeeds/main
+资源信息：pages/workBench/resourceInformation/main
+需求信息：pages/workBench/demandInformation/main
+服务商：pages/workBench/service/main
+投融资服务：pages/workBench/investmentAndFinancing/main
+
 
 消息：pages/message/index/main

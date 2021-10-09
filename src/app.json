@@ -10,7 +10,18 @@
     "pages/dynamic/index/main",
     "pages/workBench/index/main",
      "pages/workBench/service/main",
-    "pages/message/index/main"
+    "pages/message/index/main",
+    "pages/workBench/operationVisit/main",
+    "pages/workBench/policyReview/main",
+    "pages/workBench/decorationManagement/main",
+    "pages/workBench/repairManagement/main",
+    "pages/workBench/technologicalAchievements/main",
+    "pages/workBench/technologicalNeeds/main",
+    "pages/workBench/resourceInformation/main",
+    "pages/workBench/demandInformation/main",
+    "pages/workBench/investmentAndFinancing/main",
+    "pages/index/resources/main",
+    "pages/index/policyDeclaration/main"
   ],
   "permission": {
     "scope.userLocation": {

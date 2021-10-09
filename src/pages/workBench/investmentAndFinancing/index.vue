@@ -4,26 +4,25 @@
       <span :class="{active:activeIndex==index}" v-for="(item,index) in typeList" :key="index" @click="select(index)">{{item}}</span>
     </div>
     <div class="total-filter">
-      <span class="total">共1条</span>
+      <span class="total">共2条</span>
       <span class="filter"><img src="/static/images/filter.png">筛选</span>
     </div>
-    <div class="list-item" v-for="(item,index) in list" :key="index" v-if="list.length>0">
-      <div class="list-item-top">
-        <span>聚联科技有限公司</span>
-        <span>135091234567</span>
+    <div class="list-item" v-for="(item,index) in 2" :key="index">
+      <div class="list-item-left">
+        <img src="/static/images/avatar.png">
+        <img src="/static/images/pending.png" class="status-logo">
       </div>
-      <div class="list-item-bottom">
-        <span><img src="/static/images/server-logo.png">法务咨询服务</span>
-        <div>审核</div>
+      <div class="list-item-right">
+        <span>睿信致成管理顾问有限公司</span>
+        <span>机构类别：企业咨询</span>
+        <span>投资金额：343430 (万元)</span>
+        <span>联系人：张老师</span>
+        <span>联系方式：13610987651</span>
       </div>
-    </div>
-    <div class="no-data" v-if="list.length==0">
-      <img src="/static/images/noData.png">
-      <span>暂无数据</span>
     </div>
     <div class="fixed-btn">
       <span>+</span>
-      <span>需求</span>
+      <span>新增</span>
     </div>
   </div>
 </template>
@@ -32,8 +31,7 @@
   export default {
     data() {
       return {
-        list:[{}],
-        typeList: ['生效中','已失效'],
+        typeList: ['待处理','已处理'],
         activeIndex: 0
       }
     },
@@ -137,65 +135,42 @@
       background-color: #fff;
       border-radius: 20rpx;
       display: flex;
-      flex-direction: column;
-      .list-item-top {
-        width: 100%;
-        padding: 30rpx;
-        box-sizing: border-box;
+      align-items: center;
+      padding: 30rpx;
+      box-sizing: border-box;
+      .list-item-left {
+        width: 300rpx;
+        height: 250rpx;
+        margin-right: 20rpx;
+        border-radius: 10rpx;
+        position: relative;
+        img {
+          width: 300rpx;
+          height: 250rpx;
+        }
+        .status-logo {
+          position: absolute;
+          top: 20rpx;
+          left: 0;
+          width: 80rpx;
+          height: 40rpx;
+        }
+      }
+      .list-item-right {
         display: flex;
-        align-items: center;
-        justify-content: space-between;
-        border-bottom: 1px solid rgba(48,48,48,0.1);
+        flex-direction: column;
+        font-size: 24rpx;
+        color: #606060;
         span {
-          font-size: 28rpx;
-          color: #303030;
+          max-width: 330rpx;
+          margin-bottom: 10rpx;
+          overflow: hidden;
+          white-space: nowrap;
+          text-overflow: ellipsis;
         }
         span:last-child {
-          font-size: 24rpx;
-          color: #909090;
+          margin-bottom: 0;
         }
-      }
-      .list-item-bottom {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        padding: 30rpx;
-        box-sizing: border-box;
-        span {
-          font-size: 24rpx;
-          color: #909090;
-          display: flex;
-          align-items: center;
-          img {
-            width: 21rpx;
-            height: 21rpx;
-            margin-right: 16rpx;
-          }
-        }
-        div {
-          width: 131rpx;
-          height: 43rpx;
-          line-height: 43rpx;
-          background-color: #FF5400;
-          color: #fff;
-          font-size: 24rpx;
-          text-align: center;
-          border-radius: 20rpx;
-        }
-      }
-    }
-    .no-data {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      margin: 120rpx auto;
-      img {
-        width: 222rpx;
-        height: 145rpx;
-        margin-bottom: 20rpx;
-        font-size: 30rpx;
-        color: #909090;
       }
     }
     .fixed-btn {
