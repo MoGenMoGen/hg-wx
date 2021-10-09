@@ -40,6 +40,7 @@
   "projectname": "%E6%9D%AD%E9%92%A2",
   "simulatorType": "wechat",
   "simulatorPluginLibVersion": {},
+  "appid": "wxa2af9a033ae21107",
   "condition": {
     "search": {
       "list": []

@@ -268,8 +268,7 @@
   export default {
     data() {
       return {
-        id: 0,
-
+        id: 1,
         info: {},
         show: true,
         serviceTypeTwo: [{
