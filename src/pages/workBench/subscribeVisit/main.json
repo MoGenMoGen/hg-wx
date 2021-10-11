@@ -1,0 +1,6 @@
+{
+ "navigationBarTitleText":"预约参观",
+ "onReachBottomDistance": 150,
+ "enablePullDownRefresh": false,
+  "navigationBarTextStyle": "white"
+}

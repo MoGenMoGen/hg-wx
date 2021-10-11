@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText":"财务统计",
+  "onReachBottomDistance": 150,
+  "navigationBarTextStyle": "white",
+  "navigationBarBackgroundColor":"#276EF2",
+  "enablePullDownRefresh": false
+}

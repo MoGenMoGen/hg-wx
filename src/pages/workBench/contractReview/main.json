@@ -1,0 +1,6 @@
+{
+ "navigationBarTitleText":"合同审核",
+ "onReachBottomDistance": 150,
+ "enablePullDownRefresh": false,
+  "navigationBarTextStyle": "white"
+}
