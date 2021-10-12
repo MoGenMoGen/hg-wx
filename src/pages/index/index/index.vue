@@ -171,7 +171,7 @@
         }, {
           serviceTitle: "预约参观",
           serviceImg: "/static/images/yycg.png",
-          url: ''
+          url: '/pages/workBench/subscribeVisit/main'
         },{
           serviceTitle: "装修管理",
           serviceImg: "/static/images/zxgl.png",
