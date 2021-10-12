@@ -33,8 +33,7 @@
 园企互动:pages/workBench/parkInteract/main
 活动管理:pages/workBench/activityManage/main
 财务统计:pages/workBench/financeCount/main
-
-
-
-
+项目管理:pages/workBench/projectManagement/main
+合同预警:pages/workBench/contractEarlyWarning/main
+费用预警:pages/workBench/costWarning/main
 消息：pages/message/index/main

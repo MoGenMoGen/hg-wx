@@ -30,10 +30,13 @@
     "pages/workBench/parkInteract/main",
     "pages/workBench/activityManage/main",
     "pages/workBench/financeCount/main",
-
-
     "pages/index/resources/main",
-    "pages/index/policyDeclaration/main"
+    "pages/index/policyDeclaration/main",
+	"pages/workBench/contractEarlyWarning/main",
+   "pages/workBench/costWarning/main",
+   "pages/workBench/contractList/main",
+   "pages/workBench/houseManagement/main",
+   "pages/workBench/jiandang/main"
   ],
   "permission": {
     "scope.userLocation": {
