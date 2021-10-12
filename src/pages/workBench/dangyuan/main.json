@@ -1,0 +1,7 @@
+{
+ "navigationBarTitleText":"党员管理",
+ "onReachBottomDistance": 150,
+ "enablePullDownRefresh": false,
+  "navigationBarBackgroundColor": "#276EF2",
+  "navigationBarTextStyle": "white"
+}

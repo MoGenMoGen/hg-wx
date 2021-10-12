@@ -389,12 +389,12 @@
             }, {
               url: "/static/images/党员管理.png",
               title: "党员管理",
-              pageUrl: ""
+              pageUrl: "/pages/workBench/dangyuan/main"
             },
             {
               url: "/static/images/党员学习.png",
               title: "党员学习",
-              pageUrl: ""
+              pageUrl: "/pages/workBench/dangyuanxuexi/main"
             }]
           }
         ],
