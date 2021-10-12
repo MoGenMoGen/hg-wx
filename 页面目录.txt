@@ -1,3 +1,4 @@
+
 首页：pages/index/index/main
 富文本：pages/index/richText/main（暂时没用）
 新闻详情：pages/index/newDetail/main（暂时没用）
@@ -22,6 +23,18 @@
 需求信息：pages/workBench/demandInformation/main
 服务商：pages/workBench/service/main
 投融资服务：pages/workBench/investmentAndFinancing/main
+预约参观: pages/workBench/subscribeVisit/main
+入住申请:pages/workBench/occupancyApplication/main
+招商审核:pages/workBench/investReview/main
+招商管理:pages/workBench/investManage/main
+合同审核:pages/workBench/contractReview/main
+对账审核:pages/workBench/checkAcoountReview/main
+合同管理:pages/workBench/contractManage/main
+园企互动:pages/workBench/parkInteract/main
+活动管理:pages/workBench/activityManage/main
+财务统计:pages/workBench/financeCount/main
+
+
 
 
 消息：pages/message/index/main

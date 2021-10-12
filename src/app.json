@@ -20,6 +20,18 @@
     "pages/workBench/resourceInformation/main",
     "pages/workBench/demandInformation/main",
     "pages/workBench/investmentAndFinancing/main",
+    "pages/workBench/subscribeVisit/main",
+    "pages/workBench/occupancyApplication/main",
+    "pages/workBench/investReview/main",
+    "pages/workBench/investManage/main",
+    "pages/workBench/contractReview/main",
+    "pages/workBench/checkAcoountReview/main",
+    "pages/workBench/contractManage/main",
+    "pages/workBench/parkInteract/main",
+    "pages/workBench/activityManage/main",
+    "pages/workBench/financeCount/main",
+
+
     "pages/index/resources/main",
     "pages/index/policyDeclaration/main"
   ],
