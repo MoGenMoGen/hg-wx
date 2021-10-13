@@ -277,41 +277,41 @@
             serviceList: [{
               url: "/static/images/image1.png",
               title: "预约参观",
-              pageUrl: ""
+              pageUrl: "/pages/workBench/subscribeVisit/main"
             }, {
               url: "/static/images/image2.png",
               title: "入驻申请",
-              pageUrl: ""
+              pageUrl: "/pages/workBench/occupancyApplication/main"
             },
             {
               url: "/static/images/image3.png",
               title: "招商审核",
-              pageUrl: ""
+              pageUrl: "/pages/workBench/investReview/main"
             },
             {
               url: "/static/images/image4.png",
               title: "招商管理",
-              pageUrl: ""
+              pageUrl: "/pages/workBench/investManage/main"
             },
             {
               url: "/static/images/image5.png",
               title: "合同审核",
-              pageUrl: ""
+              pageUrl: "/pages/workBench/contractReview/main"
             },
             {
               url: "/static/images/img2.png",
               title: "财务统计",
-              pageUrl: ""
+              pageUrl: "/pages/workBench/financeCount/main"
             },
             {
               url: "/static/images/image6.png",
               title: "对账审核",
-              pageUrl: ""
+              pageUrl: "/pages/workBench/checkAcoountReview/main"
             },
             {
               url: "/static/images/image7.png",
               title: "合同管理",
-              pageUrl: ""
+              pageUrl: "/pages/workBench/contractManage/main"
             }]
           },
           {
@@ -320,11 +320,11 @@
             serviceList: [{
                 url: "/static/images/image8.png",
                 title: "园企互动",
-                pageUrl: ""
+                pageUrl: "/pages/workBench/parkInteract/main"
               }, {
                 url: "/static/images/image9.png",
                 title: "活动管理",
-                pageUrl: ""
+                pageUrl: "/pages/workBench/activityManage/main"
               },
               {
                 url: "/static/images/image10.png",
