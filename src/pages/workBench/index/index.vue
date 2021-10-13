@@ -275,26 +275,26 @@
             serviceTitle: "空间资产",
             img: '/static/images/spacing.png',
             serviceList: [{
-              url: "/static/images/预约参观.png",
+              url: "/static/images/image1.png",
               title: "预约参观",
               pageUrl: ""
             }, {
-              url: "/static/images/入驻申请.png",
+              url: "/static/images/image2.png",
               title: "入驻申请",
               pageUrl: ""
             },
             {
-              url: "/static/images/招商审核.png",
+              url: "/static/images/image3.png",
               title: "招商审核",
               pageUrl: ""
             },
             {
-              url: "/static/images/招商管理.png",
+              url: "/static/images/image4.png",
               title: "招商管理",
               pageUrl: ""
             },
             {
-              url: "/static/images/合同审核.png",
+              url: "/static/images/image5.png",
               title: "合同审核",
               pageUrl: ""
             },
@@ -304,12 +304,12 @@
               pageUrl: ""
             },
             {
-              url: "/static/images/对账审核.png",
+              url: "/static/images/image6.png",
               title: "对账审核",
               pageUrl: ""
             },
             {
-              url: "/static/images/合同管理.png",
+              url: "/static/images/image7.png",
               title: "合同管理",
               pageUrl: ""
             }]
@@ -318,61 +318,61 @@
             serviceTitle: "企业服务",
             img: '/static/images/qiye.png',
             serviceList: [{
-                url: "/static/images/园企互动.png",
+                url: "/static/images/image8.png",
                 title: "园企互动",
                 pageUrl: ""
               }, {
-                url: "/static/images/活动管理.png",
+                url: "/static/images/image9.png",
                 title: "活动管理",
                 pageUrl: ""
               },
               {
-                url: "/static/images/运营拜访.png",
+                url: "/static/images/image10.png",
                 title: "运营拜访",
                 pageUrl: "/pages/workBench/operationVisit/main"
               },
               {
-                url: "/static/images/政策评审.png",
+                url: "/static/images/image11.png",
                 title: "政策评审",
                 pageUrl: "/pages/workBench/policyReview/main"
               },
               {
-                url: "/static/images/装修管理.png",
+                url: "/static/images/image12.png",
                 title: "装修管理",
                 pageUrl: "/pages/workBench/decorationManagement/main"
               },
               {
-                url: "/static/images/报修管理.png",
+                url: "/static/images/image13.png",
                 title: "报修管理",
                 pageUrl: "/pages/workBench/repairManagement/main"
               },
               {
-                url: "/static/images/科技成果.png",
+                url: "/static/images/image14.png",
                 title: "科技成果",
                 pageUrl: "/pages/workBench/technologicalAchievements/main"
               },
               {
-                url: "/static/images/科技需求.png",
+                url: "/static/images/image15.png",
                 title: "科技需求",
                 pageUrl: "/pages/workBench/technologicalNeeds/main"
               },
               {
-                url: "/static/images/资源信息.png",
+                url: "/static/images/image16.png",
                 title: "资源信息",
                 pageUrl: "/pages/workBench/resourceInformation/main"
               },
               {
-                url: "/static/images/需求信息.png",
+                url: "/static/images/image17.png",
                 title: "需求信息",
                 pageUrl: "/pages/workBench/demandInformation/main"
               },
               {
-                url: "/static/images/服务商.png",
+                url: "/static/images/image18.png",
                 title: "服务商",
                 pageUrl: "/pages/workBench/service/main"
               },
               {
-                url: "/static/images/投融资服务.png",
+                url: "/static/images/image19.png",
                 title: "投融资服务",
                 pageUrl: "/pages/workBench/investmentAndFinancing/main"
               },
@@ -387,12 +387,12 @@
               title: "建党宣传",
               pageUrl: "/pages/workBench/jiandang/main"
             }, {
-              url: "/static/images/党员管理.png",
+              url: "/static/images/image20.png",
               title: "党员管理",
               pageUrl: "/pages/workBench/dangyuan/main"
             },
             {
-              url: "/static/images/党员学习.png",
+              url: "/static/images/image21.png",
               title: "党员学习",
               pageUrl: "/pages/workBench/dangyuanxuexi/main"
             }]

@@ -106,7 +106,7 @@
       .total {
         height: 40rpx;
         line-height: 40rpx;
-        padding:  20rpx;
+        padding: 0 20rpx;
         background-color: #FF5400;
         color: #fff;
         font-size: 24rpx;
