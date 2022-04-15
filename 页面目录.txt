@@ -3,7 +3,7 @@
 富文本：pages/index/richText/main（暂时没用）
 新闻详情：pages/index/newDetail/main（暂时没用）
 供需资源：pages/index/resources/main
-政策申报：pages/index/policyDeclaration/main
+政策申报：pages/index/policyDeclaration/main   
 
 个人中心 ：pages/personal/index/main
 个人信息：pages/personal/personInfo/main
